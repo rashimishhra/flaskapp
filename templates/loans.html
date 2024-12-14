@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Details</title>
+</head>
+<body>
+    <h1>Loan Details: {{ loan['Project_Name'] }}</h1>
+    <ul>
+        <li><strong>Country:</strong> {{ loan['Country'] }}</li>
+        <li><strong>Borrower:</strong> {{ loan['Borrower'] }}</li>
+        <li><strong>Lender:</strong> {{ loan['Lender'] }}</li>
+        <li><strong>Other Lender:</strong> {{ loan['Other_Lender'] }}</li>
+        <li><strong>Lender Type:</strong> {{ loan['Lender_Type'] }}</li>
+        <li><strong>Energy Source:</strong> {{ loan['Energy_Source'] }}</li>
+        <li><strong>Sub Sector:</strong> {{ loan['Sub_Sector'] }}</li>
+        <li><strong>Income level as per World Bank:</strong> {{ loan['Income_Level'] }}</li>
+    </ul>
+    <a href="/cla">Back to Loan List</a>
+</body>
+</html>
+
+

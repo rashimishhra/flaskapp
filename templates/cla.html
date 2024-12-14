@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CLA Database - Loan List</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        .pagination {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            justify-content: center;
+        }
+
+        .page-item {
+            margin: 0 5px;
+        }
+
+        .page-link {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            border: 1px solid #dee2e6;
+            background-color: #fff;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .page-link:hover {
+            background-color: #f0f0f0;
+        }
+
+        .page-item.active .page-link {
+            background-color: #007bff;
+            color: #fff;
+            border-color: #007bff;
+        }
+
+        .page-item.disabled .page-link {
+            color: #6c757d;
+            pointer-events: none;
+            background-color: #e9ecef;
+            border-color: #dee2e6;
+        }
+
+        @media (max-width: 576px) {
+            .pagination {
+                flex-wrap: wrap;
+            }
+
+            .page-item {
+                margin: 3px;
+            }
+
+            .page-link {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>CLA Database - Loan List</h1>
+    <table>
+        <tr>
+            <th>BU_ID</th>
+            <th>Year</th>
+            <th>Project_Name</th>
+            <th>Loan_Amount(USD_M)</th>
+            <th>Region</th>
+            <th>Sector</th>
+            <th>Details</th>
+        </tr>
+        {% for loan in loans %}
+        <tr>
+            <td>{{loan['BU_ID']}}</td>
+            <td>{{loan['Year']}}</td>
+            <td>{{loan['Project_Name']}}</td>
+            <td>{{loan['Loan_Amount(USD_M)']}}</td>
+            <td>{{loan['Region']}}</td>
+            <td>{{loan['Sector']}}</td>
+            <td><a href="/cla/{{loan['BU_ID']}}">View Details</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <nav>
+        <ul class="pagination">
+            <li class="page-item {% if not pagination.has_prev %}disabled{% endif %}">
+                <a class="page-link" href="{% if pagination.has_prev %}/cla?page={{ pagination.current_page - 1 }}{% else %}#{% endif %}">Previous</a>
+            </li>
+
+            {% for page in range(1, pagination.total_pages + 1) %}
+            <li class="page-item {% if page == pagination.current_page %}active{% endif %}">
+                <a class="page-link" href="/cla?page={{ page }}">{{ page }}</a>
+            </li>
+            {% endfor %}
+
+            <li class="page-item {% if not pagination.has_next %}disabled{% endif %}">
+                <a class="page-link" href="{% if pagination.has_next %}/cla?page={{ pagination.current_page + 1 }}{% else %}#{% endif %}">Next</a>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>
