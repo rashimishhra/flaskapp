@@ -1,7 +1,11 @@
+import os
+import csv
 from flask import Flask, render_template, request
 import pandas as pd
 
 app = Flask(__name__)
+
+file_path = os.path.join(os.path.dirname(__file__), 'cla.csv')
 
 csv_path = "/Users/rashimishra/Desktop/flaskapp/cla.csv"
 df = pd.read_csv(csv_path)
@@ -9,6 +13,18 @@ df = pd.read_csv(csv_path)
 PER_PAGE = 20
 
 @app.route("/")
+def index():
+    try:
+        # Open and read the CSV file
+        with open(file_path, newline='', encoding='utf-8') as csvfile:
+            reader = csv.reader(csvfile)
+            data = [row for row in reader]  # Read the CSV rows
+        return str(data)  # Just for example purposes
+    except FileNotFoundError:
+        return f"Error: The file '{file_path}' was not found!"
+    except Exception as e:
+        return f"An error occurred: {e}"
+
 def home():
     return "<h1>This is CLA Database</h1>"
 
