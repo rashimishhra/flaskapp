@@ -4,7 +4,7 @@ import os
 
 app = Flask(__name__)
 
-file_path = os.path.join(os.path.dirname(__file__), 'cla.csv')
+csv_path = os.path.join(os.path.dirname(__file__), 'cla.csv')
 
 df = pd.read_csv(csv_path)
 
