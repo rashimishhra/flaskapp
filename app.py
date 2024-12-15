@@ -3,9 +3,7 @@ import pandas as pd
 
 app = Flask(__name__)
 
-file_path = os.path.join(os.path.dirname(__file__), 'cla.csv')
-
-csv_path = "/Users/rashimishra/Desktop/flaskapp/cla.csv"
+csv_path = "./Users/rashimishra/Desktop/flaskapp/cla.csv"
 df = pd.read_csv(csv_path)
 
 PER_PAGE = 20
