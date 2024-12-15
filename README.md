@@ -1,5 +1,6 @@
 # Attempt How To 
 
+
 ## Set up the basic code on VS following instructions to develop flask app - https://github.com/jsoma/flask-tutorial
 
 ## CSV File
@@ -13,6 +14,7 @@
 ### The issue was also about naming and matching the files in the html page file in VS code and the excel file - the columns names have to be exact same
 
 ### In addition to this, space within the curly brackets in the loan and cla html files while coding variable need to be removed for then to be displayed. Eg: <td>{{loan['BU_ID']}}</td>
+
 
 ## Routes
 
