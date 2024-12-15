@@ -12,7 +12,8 @@ PER_PAGE = 20
 
 @app.route("/")
 def home():
-    return "<h1>This is CLA Database</h1>"
+    return render_template('home.html')
+
 
 @app.route("/cla")
 def loans_list():
