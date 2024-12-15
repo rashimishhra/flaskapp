@@ -1,6 +1,6 @@
-### Attempt How To 
+#### Attempt How To 
 
-### Set up the basic code on VS following instructions to develop flask app - https://github.com/jsoma/flask-tutorial
+### Set up the basic code on VS following instructions to develop flask app - https://github.com/jsoma/flask-tutorial
 
 ### CSV File:
 
@@ -31,9 +31,9 @@
 ## Render - live website - https://render.com/docs/deploy-flask
 ## File Path (Render):
 
-# Issue in deploying the web service. Correct the file path using import os and then assigning the path for csv file to a variable which then runs in the data frame (Pandas).
+### Issue in deploying the web service. Correct the file path using import os and then assigning the path for csv file to a variable which then runs in the data frame (Pandas).
 
-#### csv_path = os.path.join(os.path.dirname(__file__), 'cla.csv')
-#### df = pd.read_csv(csv_path)
+# csv_path = os.path.join(os.path.dirname(__file__), 'cla.csv')
+# df = pd.read_csv(csv_path)
 
 
