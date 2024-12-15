@@ -1,9 +1,11 @@
 from flask import Flask, render_template, request
 import pandas as pd
+import os
 
 app = Flask(__name__)
 
-csv_path = "./Users/rashimishra/Desktop/flaskapp/cla.csv"
+file_path = os.path.join(os.path.dirname(__file__), 'cla.csv')
+
 df = pd.read_csv(csv_path)
 
 PER_PAGE = 20
