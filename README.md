@@ -1,4 +1,4 @@
-# Attempt How To build a flaskapp and issues I encountered
+# How To build a flaskapp and issues encountered
 
 - Set up the basic code on VS following instructions to develop flask app - https://github.com/jsoma/flask-tutorial
 
