@@ -33,6 +33,9 @@ Loan html page styled on loan html file - same issue in display as on cla page d
 - Issue in deploying the web service
 
 
+Here is the link to the database- http://127.0.0.1:5000/
+
+
 
 
 
